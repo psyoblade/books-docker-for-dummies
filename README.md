@@ -182,12 +182,75 @@ Bye
 * [MySQL Hub](https://hub.docker.com/_/mysql/) 사이트에 간단한 사용법과 환경변수에 대한 설명이 존재합니다.
 
 
-## 여러가지 단상들...
-> 빌드 도구의 fat jar 생성과 github 코드관리가 docker 이미지와 docker hub 구조와 닮아 있으며, 다양한 면에서 아래와 같은 매트릭스를 만들어 보았습니다.
+## 도커 준비
+* sudo 입력하지 않기
+```bash
+	sudo usermod -aG docker ${USER}
+	sudo service docker restart
+```
 
+
+## 생각정리
+> 빌드 도구의 fat jar 생성과 github 코드관리가 docker 이미지와 docker hub 구조와 닮아 있으며, 다양한 면에서 아래와 같은 매트릭스를 만들어 보았습니다.
 | 비고 | 소프트웨어 | 하드웨어 |
 | ---- |:-------------|:----- |
 | build | fat jar | docker image |
 | repository | github | docker hub |
 | concept | class-instance, exec-process | images/container |
+* 결국 Mac, Windows 공히 VirtualBox 사용하여 다양한 OS를 올릴 수 있으며, 이를 통해 이미지를 생성 로딩 할 수 있는 것 같습니다.
+	* 초기 설치 후에 virutalbox를 통해 boot2docker.ios를 로딩하고, 가상머신에 접속되어 터미널을 만날 수 있습니다.
+
+``` bash
+copying initial boot2docker.iso (run "boot2docker.exe download" to update)
+initializing...
+Generating public/private rsa key pair.
+Your identification has been saved in C:\Users\psyoblade.NC-KOREA\.ssh\id_boot2docker.
+Your public key has been saved in C:\Users\psyoblade.NC-KOREA\.ssh\id_boot2docker.pub.
+The key fingerprint is:
+SHA256:
+The key's randomart image is:
++---[RSA 2048]----+
+|          .      |
+|         o o .   |
+|         * o B = |
+|        . = = =  |
+|      . .o *+oo..|
+|      . S + + +.+|
+|     o +. B o=.o |
+|    o E +o +. *  |
+|     o * ..o o oo|
++----[SHA256]-----+
+Initialization of virtual machine "boot2docker-vm" complete.
+Use `boot2docker up` to start it.
+
+starting...
+Waiting for VM and Docker daemon to start...
+........................oooooo
+Started.
+Writing C:\Users\psyoblade.NC-KOREA\.boot2docker\certs\boot2docker-vm\ca.pem
+Writing C:\Users\psyoblade.NC-KOREA\.boot2docker\certs\boot2docker-vm\cert.pem
+Writing C:\Users\psyoblade.NC-KOREA\.boot2docker\certs\boot2docker-vm\key.pem
+
+To connect the Docker client to the Docker daemon, please set:
+    export DOCKER_CERT_PATH='C:\Users\psyoblade.NC-KOREA\.boot2docker\certs\boot2docker-vm'
+    export DOCKER_TLS_VERIFY=1
+    export DOCKER_HOST=tcp://x.x.x.x:2376
+
+Or run: `eval "$(boot2docker shellinit)"`
+
+
+IP address of docker VM:
+x.x.x.x
+
+setting environment variables ...
+Writing C:\Users\psyoblade.NC-KOREA\.boot2docker\certs\boot2docker-vm\ca.pem
+Writing C:\Users\psyoblade.NC-KOREA\.boot2docker\certs\boot2docker-vm\cert.pem
+Writing C:\Users\psyoblade.NC-KOREA\.boot2docker\certs\boot2docker-vm\key.pem
+    export DOCKER_HOST=tcp://x.x.x.x:2376
+    export DOCKER_CERT_PATH='C:\\Users\\psyoblade.NC-KOREA\\.boot2docker\\certs\\boot2docker-vm'
+    export DOCKER_TLS_VERIFY=1
+
+You can now use `docker` directly, or `boot2docker ssh` to log into the VM.
+```
+
 
