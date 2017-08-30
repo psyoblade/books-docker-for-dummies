@@ -189,6 +189,16 @@ Bye
 	sudo service docker restart
 ```
 
+=======
+
+## TODO
+### [슬라이드쉐어](https://www.slideshare.net/pyrasis/docker-fordummies-44424016) 92 페이지 정리 중
+### [블로그](https://subicura.com/2017/01/19/docker-guide-for-beginners-2.html) 컨테이너 업데이트 정리 중
+
+
+
+## 여러가지 단상들...
+> 빌드 도구의 fat jar 생성과 github 코드관리가 docker 이미지와 docker hub 구조와 닮아 있으며, 다양한 면에서 아래와 같은 매트릭스를 만들어 보았습니다.
 
 ## 생각정리
 > 빌드 도구의 fat jar 생성과 github 코드관리가 docker 이미지와 docker hub 구조와 닮아 있으며, 다양한 면에서 아래와 같은 매트릭스를 만들어 보았습니다.
